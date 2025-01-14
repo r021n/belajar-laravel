@@ -15,7 +15,7 @@
         </aside>
 
         <main class="flex-1 p-6 bg-gray-900">
-            {{$slot}}
+            {{$main}}
         </main>
     </div>
 
