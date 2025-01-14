@@ -11,9 +11,14 @@
     </x-slot>
 
     <x-slot name="main">
-        <div class="bg-blue-500 text-white py-16 px-8 rounded-lg shadow-lg">
+        <!-- <div class="bg-blue-500 text-white py-16 px-8 rounded-lg shadow-lg">
             <h1 class="text-4xl font-bold">Welcome to laravel 11</h1>
             <p class="text-xl mt-6">This is a simple example of laravel 11</p>
+        </div> -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+            @foreach ($movies as $movie)
+                <x-movie.card :index="$loop->index" :title="$movie['title']" :image="$movie['image']" :release_date="$movie['release_date']"></x-movie.card>
+            @endforeach
         </div>
     </x-slot>
 
