@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreMovieRequest;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Routing\Controllers\HasMiddleware;
@@ -54,12 +55,8 @@ class MovieController extends Controller implements HasMiddleware
         return view('movies.show', ['movie' => $movie, 'movieId' => $id]);
     }
 
-    public function store(Request $request){
-        $request->validate([
-            'title' => 'required',
-            'release_date' => 'required',
-            'description' => 'required|min:5',
-        ]);
+    public function store(StoreMovieRequest $request){
+
 
         $newMovie = [
             "title" => $request["title"],
