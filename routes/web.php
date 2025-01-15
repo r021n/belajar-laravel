@@ -61,3 +61,16 @@ Route::get('/login', function(){
 Route::post('/request', function(Request $request){
     return response('ok')->header('content-type', 'text/plain');
 });
+
+Route::get('/session', function(Request $request){
+    // session([
+    //     'isMember' => 'yes',
+    // ]);
+    // session(['days' => ['Thursday', 'Friday', 'Saturday']]);
+    // session()->push('days', 'Sunday');
+    // session()->put('days', array_diff(session('days'), ['Sunday']));
+    // session()->forget('days');
+    session()->forget('isMember');
+
+    return $request->session()->all();
+});
