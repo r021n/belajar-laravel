@@ -55,6 +55,12 @@ class MovieController extends Controller implements HasMiddleware
     }
 
     public function store(Request $request){
+        $request->validate([
+            'title' => 'required',
+            'release_date' => 'required',
+            'description' => 'required|min:5',
+        ]);
+
         $newMovie = [
             "title" => $request["title"],
             "description" => $request["description"],

@@ -17,7 +17,7 @@
         </div> -->
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
             @foreach ($movies as $movie)
-                <x-movie.card :index="$loop->index" :title="$movie['title']" :image="$movie['image']" :release_date="$movie['release_date']"></x-movie.card>
+                <x-movie.card :index="$loop->index" :title="$movie['title']" :image="$movie['image']" :releasedate="$movie['release_date']"></x-movie.card>
             @endforeach
         </div>
     </x-slot>
